@@ -1,0 +1,30 @@
+layout js is main entry point
+page.js export default function Home()  component is know as server side component
+all component within app folder in react server component
+"use client" for client side component
+client component must need to use if any hook used
+
+
+routing, inside app folder create folder with route name,
+    app/user/page.js
+nested routing 
+    app/user/new/page.js
+dynamic route 
+    app/user/[postId]/page.js
+
+layout.js can use in subfolders also
+loading.js for loading animation
+error.js for showing error = error component must be client component, add "use client"
+
+
+Data fetching
+    1. Server side rendering
+    2. Static site generation
+    3. Incremental static generation
+
+api routing = 
+    app/api/users
+
+
+
+npm install bcrypt mongodb mongoose next-auth
