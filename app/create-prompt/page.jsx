@@ -44,6 +44,7 @@ const CreatePrompt = () => {
       setPost={setPost}
       submitting={submitting}
       handleSubmit={createPrompt}
+      desc="Unleash your creativity and share your unique prompts with the world on PromptCraft"
     />
   );
 };
