@@ -1,5 +1,6 @@
 import { Schema, model, models } from "mongoose";
 
+// Define the schema for the User collection
 const UserSchema = new Schema({
   email: {
     type: String,
@@ -16,9 +17,10 @@ const UserSchema = new Schema({
   },
   image: {
     type: String,
-  }
+  },
 });
 
+// Create a User model based on the schema
 const User = models.User || model("User", UserSchema);
 
 export default User;

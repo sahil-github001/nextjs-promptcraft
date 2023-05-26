@@ -1,16 +1,16 @@
-import NextAuth from 'next-auth';
-import GoogleProvider from 'next-auth/providers/google';
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
 
-import User from '@models/user';
-import { connectToDB } from '@utils/database';
+import User from "@models/user";
+import { connectToDB } from "@utils/database";
 
 const handler = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    })
-  ], 
+    }),
+  ],
   callbacks: {
     async session({ session }) {
       // store the user id from MongoDB to session
@@ -35,13 +35,25 @@ const handler = NextAuth({
           });
         }
 
-        return true
+        return true;
       } catch (error) {
         console.log("Error checking if user exists: ", error.message);
-        return false
+        return false;
       }
     },
-  }
-})
+  },
+});
 
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };
+
+/*
+The handler defines the NextAuth configuration. It uses the Google provider with the provided client ID and client 
+secret obtained from environment variables. The callbacks section contains two callback functions: session and signIn.
+
+    The session callback modifies the session object to include the user ID retrieved from the MongoDB database based 
+    on the user's email.
+    The signIn callback is triggered when a user signs in. It first connects to the database using connectToDB function.
+     Then it checks if the user already exists in the database based on their email. If not, it creates a new user 
+     document with the email, username (derived from the profile name), and profile picture. Finally, it returns 
+     true to allow the sign-in process to continue.
+*/

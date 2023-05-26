@@ -21,10 +21,54 @@ Data fetching
     1. Server side rendering
     2. Static site generation
     3. Incremental static generation
-
 api routing = 
     app/api/users
-
-
-
 npm install bcrypt mongodb mongoose next-auth
+
+
+Project Overview:
+The PromptCraft web application is designed to provide a platform for users to create and share creative prompts. 
+It allows users to sign in with their Google accounts, create prompts, view and search prompts, and manage their own profiles.
+
+Technologies Used:
+
+    React: The frontend of the application is built using the React JavaScript library. React enables the 
+    creation of reusable UI components and facilitates the management of state and rendering of dynamic content.
+
+    Next.js: Next.js is a framework for building server-side rendered (SSR) React applications. It provides 
+    features like server-side rendering, automatic code splitting, and simplified routing, enhancing the performance 
+    and SEO-friendliness of the application.
+
+    NextAuth.js: NextAuth.js is an authentication library that simplifies the implementation of authentication 
+    in Next.js applications. It is used in this project to handle user authentication using the GoogleProvider, 
+    allowing users to sign in with their Google accounts.
+
+    MongoDB: MongoDB is a NoSQL database used to store the application's data. It provides a flexible document-based 
+    data model, which is suitable for storing prompt information, user profiles, and other data related to the application.
+
+Key Features and Functionality:
+
+    User Authentication: Users can sign in to the application using their Google accounts. NextAuth.js handles the 
+    authentication process and provides a secure and seamless login experience.
+
+    Create and Edit Prompts: Authenticated users can create new prompts by providing a prompt text and associated tags. 
+    They can also edit their existing prompts, modifying the prompt text and tags as desired.
+
+    Prompt Listing and Search: The application allows users to view a feed of prompts created by all users. Users can 
+    search for prompts based on tags or usernames. The search functionality filters and displays prompts that match the 
+    search criteria.
+
+    User Profiles: Each user has a profile page that displays their username, description, and a list of prompts they have 
+    created. Users can edit and delete their own prompts from their profile page.
+
+    API Integration: The application includes several API routes for handling CRUD (Create, Read, Update, Delete) 
+    operations. These routes communicate with the database to store and retrieve prompt data, as well as perform updates 
+    and deletions.
+
+    Frontend Components: The frontend of the application is composed of various React components, such as Form, 
+    PromptCard, PromptCardList, Feed, Profile, CreatePrompt, and EditPrompt. These components are responsible for 
+    rendering the UI elements and handling user interactions.
+
+By leveraging technologies like React, Next.js, NextAuth.js, and MongoDB, the PromptCraft web application provides 
+an interactive and engaging platform for users to create, share, and explore creative prompts. It offers a seamless 
+user experience, efficient data management, and a visually appealing interface.

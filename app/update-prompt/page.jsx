@@ -7,7 +7,7 @@ const EditPrompt = () => {
   const router = useRouter();
 
   const searchParams = useSearchParams();
-  const promptId = searchParams.get('id');
+  const promptId = searchParams.get("id");
 
   const [submitting, setIsSubmitting] = useState(false);
   const [post, setPost] = useState({
@@ -17,20 +17,20 @@ const EditPrompt = () => {
 
   useEffect(() => {
     const getPromptDetails = async () => {
-        const response = await fetch(`/api/prompt/${promptId}`);
-        const data = await response.json();
-        setPost({
-            prompt: data.prompt,
-            tag: data.tag
-        })
-    }
-    if(promptId) getPromptDetails();
+      const response = await fetch(`/api/prompt/${promptId}`);
+      const data = await response.json();
+      setPost({
+        prompt: data.prompt,
+        tag: data.tag,
+      });
+    };
+    if (promptId) getPromptDetails();
   }, [promptId]);
 
   const updatePrompt = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    if(!promptId) alert("Prompt Id is not found")
+    if (!promptId) alert("Prompt Id is not found");
     try {
       const response = await fetch(`/api/prompt/${promptId}`, {
         method: "PATCH",
