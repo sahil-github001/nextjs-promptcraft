@@ -12,9 +12,6 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, desc }) => {
         className="mt-10 w-full max-2-2xl flex flex-col gap-7  p-5 rounded-lg mb-5 bg-zinc-600 "
       >
         <label>
-          <span className="font-satoshi font-semibold text-base text-white">
-            Your AI Prompt
-          </span>
           <textarea
             value={post.prompt}
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
