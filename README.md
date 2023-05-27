@@ -1,9 +1,5 @@
 # PromptCraft
 
-
-https://github.com/sahil-github001/nextjs-promptcraft/assets/119884239/41710db1-7bf5-4b95-90a6-a9a152339dc8
-
-
 ## Description
 
 PromptCraft is a full-stack web application developed using Next.js, MongoDB, and Tailwind CSS. It provides a platform for users to create and share prompts, With Google authentication, users can easily sign in and access the features of the application.
